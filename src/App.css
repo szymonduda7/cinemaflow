@@ -1,0 +1,11 @@
+body {
+  background-color: #181818;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  padding: 16px;
+}
