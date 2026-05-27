@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import styles from "./App.module.css";
 import axios from "axios";
-import secrets from "../secret.json";
 import { Navbar } from "./sections/";
 
 const BASE_URL = "https://api.themoviedb.org/";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 function App() {
   const [data, setData] = useState();
 
   async function fetchData(url?: string) {
-    return await axios.get(`${BASE_URL}${url}?api_key=${secrets.apiKey}`, {});
+    return await axios.get(`${BASE_URL}${url}?api_key=${API_KEY}`, {});
   }
 
   useEffect(() => {
