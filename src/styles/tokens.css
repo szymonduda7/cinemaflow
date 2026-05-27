@@ -1,0 +1,84 @@
+:root {
+  /* --- Surfaces --- */
+  --color-surface: #0b1326;
+  --color-surface-dim: #0b1326;
+  --color-surface-bright: #31394d;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container: #171f33;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-surface-variant: #2d3449;
+  --color-surface-tint: #ffb4aa;
+
+  /* --- On-surface --- */
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #e9bcb6;
+  --color-inverse-surface: #dae2fd;
+  --color-inverse-on-surface: #283044;
+
+  /* --- Background --- */
+  --color-background: #0b1326;
+  --color-on-background: #dae2fd;
+
+  /* --- Outline --- */
+  --color-outline: #af8782;
+  --color-outline-variant: #5e3f3b;
+
+  /* --- Primary (Cinema Red) --- */
+  --color-primary: #ffb4aa;
+  --color-on-primary: #690003;
+  --color-primary-container: #e50914;
+  --color-on-primary-container: #fff7f6;
+  --color-inverse-primary: #c0000c;
+  --color-primary-fixed: #ffdad5;
+  --color-primary-fixed-dim: #ffb4aa;
+  --color-on-primary-fixed: #410001;
+  --color-on-primary-fixed-variant: #930007;
+
+  /* --- Secondary (Action Orange) --- */
+  --color-secondary: #ffb77f;
+  --color-on-secondary: #4e2600;
+  --color-secondary-container: #ff8a00;
+  --color-on-secondary-container: #613100;
+  --color-secondary-fixed: #ffdcc4;
+  --color-secondary-fixed-dim: #ffb77f;
+  --color-on-secondary-fixed: #2f1500;
+  --color-on-secondary-fixed-variant: #6f3900;
+
+  /* --- Tertiary --- */
+  --color-tertiary: #a7c8ff;
+  --color-on-tertiary: #003061;
+  --color-tertiary-container: #0072d7;
+  --color-on-tertiary-container: #f8f9ff;
+  --color-tertiary-fixed: #d5e3ff;
+  --color-tertiary-fixed-dim: #a7c8ff;
+  --color-on-tertiary-fixed: #001b3c;
+  --color-on-tertiary-fixed-variant: #004689;
+
+  /* --- Error --- */
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  /* --- Font families --- */
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Hanken Grotesk", sans-serif;
+  --font-label: "JetBrains Mono", monospace;
+
+  /* --- Border radius --- */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* --- Spacing --- */
+  --spacing-base: 8px;
+  --spacing-section-gap: 64px;
+  --spacing-grid-gutter: 24px;
+  --spacing-container-margin: 40px;
+  --spacing-card-padding: 16px;
+}
