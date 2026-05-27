@@ -1,0 +1,18 @@
+.main {
+  padding-inline: 40px;
+
+  height: 80px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  gap: 48px;
+}
+
+.navActions {
+  display: flex;
+  gap: 24px;
+}
