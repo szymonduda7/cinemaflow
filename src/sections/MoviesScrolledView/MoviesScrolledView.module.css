@@ -1,0 +1,20 @@
+.movie-scrolled-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding-inline: 40px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.scroll-view {
+  display: flex;
+  gap: 16px;
+
+  overflow-x: visible;
+}
