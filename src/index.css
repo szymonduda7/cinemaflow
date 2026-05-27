@@ -6,8 +6,19 @@
   margin: 0;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
+  min-height: 100vh;
+  width: 100%;
   background-color: var(--color-background);
   color: var(--color-on-background);
   font-family: var(--font-body);
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
 }
