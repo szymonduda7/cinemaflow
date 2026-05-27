@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./App.module.css";
 import axios from "axios";
 import secrets from "../secret.json";
+import { Navbar } from "./sections/";
 
 const BASE_URL = "https://api.themoviedb.org/";
 
@@ -25,9 +26,7 @@ function App() {
 
   return (
     <div className={styles.mainContainer}>
-      <h1>Bibilioteka Filmów Web</h1>
-
-      <div></div>
+      <Navbar />
     </div>
   );
 }
