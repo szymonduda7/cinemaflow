@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import styles from "./App.module.css";
 import axios from "axios";
 import secrets from "../secret.json";
 
@@ -24,8 +24,10 @@ function App() {
   data && console.log(data);
 
   return (
-    <div className="main-container">
+    <div className={styles.mainContainer}>
       <h1>Bibilioteka Filmów Web</h1>
+
+      <div></div>
     </div>
   );
 }
