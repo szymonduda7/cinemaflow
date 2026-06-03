@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { MoviePoster, PosterSizes, Text } from "../../components/ui";
 import styles from "./MoviesScrolledView.module.css";
 import axios from "axios";
-
-const BASE_URL = "https://api.themoviedb.org/";
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+import { API_BASE_URL, API_KEY } from "../../config";
 
 interface MoviesScrolledViewProps {
   variant: "popular" | "top_rated" | "now_playing" | "upcoming";
@@ -14,7 +12,7 @@ export function MoviesScrolledView({ variant }: MoviesScrolledViewProps) {
   const [data, setData] = useState<any>(null);
 
   async function fetchData(url?: string) {
-    return await axios.get(`${BASE_URL}${url}?api_key=${API_KEY}`, {});
+    return await axios.get(`${API_BASE_URL}${url}?api_key=${API_KEY}`, {});
   }
 
   useEffect(() => {
