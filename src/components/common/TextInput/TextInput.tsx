@@ -5,9 +5,15 @@ interface TextInputProps {
   value: string;
   setValue: (value: string) => void;
   placeholder?: string;
+  onKeyDown: (e: React.KeyboardEvent<HTMLElement>) => void;
 }
 
-export function TextInput({ value, setValue, placeholder }: TextInputProps) {
+export function TextInput({
+  value,
+  setValue,
+  placeholder,
+  onKeyDown,
+}: TextInputProps) {
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     setValue(e.target.value);
   }
@@ -18,6 +24,7 @@ export function TextInput({ value, setValue, placeholder }: TextInputProps) {
       onChange={handleInputChange}
       placeholder={placeholder}
       className={styles["text-input"]}
+      onKeyDown={onKeyDown}
     />
   );
 }

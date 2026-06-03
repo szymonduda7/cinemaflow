@@ -18,9 +18,16 @@ const searchSlice = createSlice({
       if (query === "") return;
 
       state.query = action.payload;
+
+      console.log(`query: ${query} succesfully set`);
     },
   },
+  selectors: {
+    getQuery: (state: SearchState) => state.query,
+  },
 });
+
+export const { getQuery } = searchSlice.selectors;
 
 export const { setQuery } = searchSlice.actions;
 
