@@ -12,6 +12,7 @@ export function SearchBar() {
 
   function handleSubmit() {
     dispatch(setQuery(value));
+    setValue("");
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLElement>) {

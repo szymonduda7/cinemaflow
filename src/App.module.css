@@ -9,3 +9,11 @@
 
   margin-bottom: 128px;
 }
+
+.film-search-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  margin-inline: 52px;
+}
