@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import styles from "./MoviePoster.module.css";
 
 const PosterSizes = {
@@ -12,15 +13,21 @@ const PosterSizes = {
 type PosterSize = "w92" | "w185" | "w342" | "w500" | "w780" | "original";
 
 interface MoviePosterProps {
+  id: string;
   src: string;
   size: PosterSize;
 }
 
-export function MoviePoster({ src, size }: MoviePosterProps) {
+export function MoviePoster({ id, src, size }: MoviePosterProps) {
+  const navigate = useNavigate();
+
   return (
     <img
       src={`https://image.tmdb.org/t/p/${size}${src}`}
       alt="Poster"
+      onClick={() => {
+        navigate(`/${id}`);
+      }}
       className={styles["movie-poster"]}
     />
   );

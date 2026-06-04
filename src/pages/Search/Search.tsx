@@ -14,7 +14,7 @@ export function Search() {
   useEffect(() => {
     (async () => {
       try {
-        setSearchData(await sendApiRequest(`/search/multi`, { query }));
+        setSearchData(await sendApiRequest(`/search/movie`, { query }));
 
         console.log(searchData);
       } catch {
@@ -31,6 +31,7 @@ export function Search() {
         <div className={styles["film-search-tiles"]}>
           {searchData.results.map((e: any) => (
             <MoviePoster
+              id={e.id}
               key={e.id}
               src={e.poster_path}
               size={PosterSizes.W185}

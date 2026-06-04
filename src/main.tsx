@@ -7,6 +7,7 @@ import { store } from "./redux/store.ts";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { Search } from "./pages/Search/Search.tsx";
+import { MovieDetails } from "./pages/MovieDetails/MovieDetails.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -16,6 +17,8 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/" element={<Home />}></Route>
 
           <Route path="/search" element={<Search />}></Route>
+
+          <Route path="/:movieId" element={<MovieDetails />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>

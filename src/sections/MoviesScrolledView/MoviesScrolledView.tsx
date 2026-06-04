@@ -43,6 +43,7 @@ export function MoviesScrolledView({ variant }: MoviesScrolledViewProps) {
           {data.results.map((e: any) => (
             <MoviePoster
               key={e.id}
+              id={e.id}
               src={e.poster_path}
               size={PosterSizes.W185}
             />
