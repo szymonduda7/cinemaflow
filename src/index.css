@@ -6,6 +6,11 @@
   margin: 0;
 }
 
+a {
+  color: var(--color-on-background);
+  text-decoration: none;
+}
+
 html {
   min-height: 100%;
 }

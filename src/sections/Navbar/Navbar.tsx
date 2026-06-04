@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { SearchBar } from "../../components/common";
 import { BellIcon } from "../../components/icons";
 import { Text } from "../../components/ui";
@@ -10,7 +11,9 @@ export function Navbar() {
         <Text variant="display-lg">CINEMAFLOW</Text>
 
         <div className={styles.navItems}>
-          <Text variant="body-md">Movies</Text>
+          <NavLink to={"/"}>
+            <Text variant="body-md">Movies</Text>
+          </NavLink>
           <Text variant="body-md">Series</Text>
           <Text variant="body-md">Watchlist</Text>
         </div>
