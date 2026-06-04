@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { MoviePoster, PosterSizes, Text } from "../../components/ui";
 import styles from "./MoviesScrolledView.module.css";
-import axios from "axios";
-import { API_BASE_URL, API_KEY } from "../../config";
+import { sendApiRequest } from "../../config";
 
 interface MoviesScrolledViewProps {
   variant: "popular" | "top_rated" | "now_playing" | "upcoming";
@@ -11,16 +10,12 @@ interface MoviesScrolledViewProps {
 export function MoviesScrolledView({ variant }: MoviesScrolledViewProps) {
   const [data, setData] = useState<any>(null);
 
-  async function fetchData(url?: string) {
-    return await axios.get(`${API_BASE_URL}${url}?api_key=${API_KEY}`, {});
-  }
-
   useEffect(() => {
     let data;
 
     (async () => {
-      data = await fetchData(`3/movie/${variant}`);
-      setData(data.data);
+      data = await sendApiRequest(`/movie/${variant}`);
+      setData(data);
     })();
   }, []);
 

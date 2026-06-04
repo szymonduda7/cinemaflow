@@ -2,14 +2,13 @@ import styles from "./App.module.css";
 import { MoviesScrolledView, Navbar } from "./sections/";
 import { getQuery } from "./redux/slices/searchSlice";
 import { useSelector } from "react-redux";
-import axios from "axios";
-import type { AxiosResponse } from "axios";
-import { API_BASE_URL, API_KEY } from "./config";
+import { sendApiRequest } from "./config";
 import { useEffect, useState } from "react";
 import { MoviePoster, PosterSizes } from "./components/ui";
+import { type SearchResponse } from "./config/types";
 
 function App() {
-  const [searchData, setSearchData] = useState<AxiosResponse | null>(null);
+  const [searchData, setSearchData] = useState<SearchResponse>();
 
   const query = useSelector(getQuery);
 
@@ -17,11 +16,7 @@ function App() {
     if (query !== "") {
       (async () => {
         try {
-          setSearchData(
-            await axios.get(
-              `${API_BASE_URL}/3/search/multi?query=${query}&api_key=${API_KEY}`,
-            ),
-          );
+          setSearchData(await sendApiRequest(`/search/multi`, { query }));
 
           console.log(searchData);
         } catch {
@@ -37,7 +32,7 @@ function App() {
 
       {searchData && (
         <div className={styles["film-search-tiles"]}>
-          {searchData.data.results.map((e: any) => (
+          {searchData.results.map((e: any) => (
             <MoviePoster
               key={e.id}
               src={e.poster_path}
@@ -47,7 +42,7 @@ function App() {
         </div>
       )}
 
-      {/* {query ? (
+      {query ? (
         <div>{query}</div>
       ) : (
         <>
@@ -56,7 +51,7 @@ function App() {
           <MoviesScrolledView variant="upcoming" />
           <MoviesScrolledView variant="now_playing" />
         </>
-      )} */}
+      )}
     </div>
   );
 }
