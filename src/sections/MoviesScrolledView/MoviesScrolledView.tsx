@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MoviePoster, PosterSizes, Text } from "../../components/ui";
+import { MoviePoster, Text } from "../../components/ui";
 import styles from "./MoviesScrolledView.module.css";
 import { sendApiRequest } from "../../config";
 
@@ -45,7 +45,7 @@ export function MoviesScrolledView({ variant }: MoviesScrolledViewProps) {
               key={e.id}
               id={e.id}
               src={e.poster_path}
-              size={PosterSizes.W185}
+              size={"w185"}
             />
           ))}
         </div>

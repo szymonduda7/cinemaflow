@@ -5,7 +5,7 @@ import type { SearchResponse } from "../../config/types";
 import { useSelector } from "react-redux";
 import { getQuery } from "../../redux";
 import { sendApiRequest } from "../../config";
-import { MoviePoster, PosterSizes } from "../../components/ui";
+import { MoviePoster } from "../../components/ui";
 
 export function Search() {
   const [searchData, setSearchData] = useState<SearchResponse>();
@@ -34,7 +34,7 @@ export function Search() {
               id={e.id}
               key={e.id}
               src={e.poster_path}
-              size={PosterSizes.W185}
+              size={"w185"}
             />
           ))}
         </div>

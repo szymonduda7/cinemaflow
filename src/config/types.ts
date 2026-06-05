@@ -82,3 +82,14 @@ export interface MovieDetails {
   vote_average: number;
   vote_count: number;
 }
+
+const ImageSizes = {
+  W92: "w92",
+  W185: "w185",
+  W342: "w342",
+  W500: "w500",
+  W780: "w780",
+  Original: "original",
+} as const;
+
+export type ImageSize = (typeof ImageSizes)[keyof typeof ImageSizes];

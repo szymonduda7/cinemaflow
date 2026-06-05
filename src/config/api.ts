@@ -4,6 +4,8 @@ export const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "https://api.themoviedb.org/3";
 export const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
+export const IMAGE_BASE_URL = "https://image.tmdb.org/t/p";
+
 export async function sendApiRequest<SearchResponse>(
   url: string,
   params?: Record<string, any>,
