@@ -3,7 +3,7 @@ import { MoviesScrolledView, Navbar } from "../../sections";
 
 export default function Home() {
   return (
-    <main className={styles.mainContainer}>
+    <main className={styles["main-container"]}>
       <Navbar />
 
       <MoviesScrolledView variant="popular" />
