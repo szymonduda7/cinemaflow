@@ -1,0 +1,11 @@
+p {
+  color: var(--color-on-surface-variant);
+}
+
+.circle-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+
+  background-color: var(--color-outline-variant);
+}

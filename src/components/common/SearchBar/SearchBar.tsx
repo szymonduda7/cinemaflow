@@ -6,6 +6,7 @@ import { useState } from "react";
 import { setQuery } from "../../../redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { Flex } from "../Flex";
 
 export function SearchBar() {
   const [value, setValue] = useState("");
@@ -24,7 +25,7 @@ export function SearchBar() {
   }
 
   return (
-    <div className={styles.searchBar}>
+    <Flex className={styles.searchBar} gap={"16px"} alignItems="center">
       <SearchIcon />
 
       <TextInput
@@ -33,6 +34,6 @@ export function SearchBar() {
         placeholder="Search..."
         onKeyDown={handleKeyDown}
       />
-    </div>
+    </Flex>
   );
 }

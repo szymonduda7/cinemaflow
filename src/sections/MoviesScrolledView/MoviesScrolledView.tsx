@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { MoviePoster, Text } from "../../components/ui";
-import styles from "./MoviesScrolledView.module.css";
+import styles from "./MoviesScrolledView.module.scss";
 import { sendApiRequest } from "../../config";
-
+import { Flex } from "../../components/common/";
 interface MoviesScrolledViewProps {
   variant: "popular" | "top_rated" | "now_playing" | "upcoming";
 }
@@ -34,12 +34,16 @@ export function MoviesScrolledView({ variant }: MoviesScrolledViewProps) {
 
   return (
     data && (
-      <section className={styles["movie-scrolled-view"]}>
-        <div className={styles["top"]}>
+      <Flex
+        gap={"16px"}
+        flexDirection="column"
+        className={styles["movie-scrolled-view"]}
+      >
+        <Flex justifyContent="space-between" className={styles["top"]}>
           <Text variant="display-md">{createTitle()}</Text>
-        </div>
+        </Flex>
 
-        <div className={styles["scroll-view"]}>
+        <Flex gap={"16px"} className={styles["scroll-view"]}>
           {data.results.map((e: any) => (
             <MoviePoster
               key={e.id}
@@ -48,8 +52,8 @@ export function MoviesScrolledView({ variant }: MoviesScrolledViewProps) {
               size={"w185"}
             />
           ))}
-        </div>
-      </section>
+        </Flex>
+      </Flex>
     )
   );
 }

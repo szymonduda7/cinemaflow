@@ -1,29 +1,33 @@
+import styles from "./Navbar.module.scss";
 import { NavLink } from "react-router";
-import { SearchBar } from "../../components/common";
+import { SearchBar, Flex } from "../../components/common";
 import { BellIcon } from "../../components/icons";
 import { Text } from "../../components/ui";
-import styles from "./Navbar.module.css";
 
 export function Navbar() {
   return (
-    <div className={styles.main}>
-      <div className={styles.navigation}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      className={styles["main"]}
+    >
+      <Flex gap={"48px"}>
         <Text variant="display-lg">CINEMAFLOW</Text>
 
-        <div className={styles.navItems}>
+        <Flex gap={"32px"} alignItems="center">
           <NavLink to={"/"}>
             <Text variant="body-md">Movies</Text>
           </NavLink>
           <Text variant="body-md">Series</Text>
           <Text variant="body-md">Watchlist</Text>
-        </div>
-      </div>
+        </Flex>
+      </Flex>
 
-      <div className={styles.navActions}>
+      <Flex gap={"24px"} alignItems="center">
         <SearchBar />
 
         <BellIcon />
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 }

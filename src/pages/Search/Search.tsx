@@ -1,11 +1,12 @@
+import styles from "./Search.module.scss";
 import { useEffect, useState } from "react";
 import { Navbar } from "../../sections";
-import styles from "./Search.module.css";
 import type { SearchResponse } from "../../config/types";
 import { useSelector } from "react-redux";
 import { getQuery } from "../../redux";
 import { sendApiRequest } from "../../config";
 import { MoviePoster } from "../../components/ui";
+import { Flex } from "../../components/common/";
 
 export function Search() {
   const [searchData, setSearchData] = useState<SearchResponse>();
@@ -24,11 +25,15 @@ export function Search() {
   }, [query]);
 
   return (
-    <main className={styles["search"]}>
+    <Flex flexDirection="column">
       <Navbar />
 
       {searchData && (
-        <div className={styles["film-search-tiles"]}>
+        <Flex
+          flexWrap="wrap"
+          gap={"16px"}
+          className={styles["film-search-tiles"]}
+        >
           {searchData.results.map((e: any) => (
             <MoviePoster
               id={e.id}
@@ -37,8 +42,8 @@ export function Search() {
               size={"w185"}
             />
           ))}
-        </div>
+        </Flex>
       )}
-    </main>
+    </Flex>
   );
 }

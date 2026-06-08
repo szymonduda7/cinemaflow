@@ -1,4 +1,4 @@
-import styles from "./MoviePoster.module.css";
+import styles from "./MoviePoster.module.scss";
 
 import { useNavigate } from "react-router";
 import { DatabaseImage } from "../../common/DatabaseImage/DatabaseImage";

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import styles from "./Text.module.css";
+import styles from "./Text.module.scss";
 
 type TextVariant =
   | "display-lg"
@@ -31,7 +31,12 @@ const variantClassMap: Record<TextVariant, string> = {
   "label-md": styles["label-md"],
 };
 
-export function Text({ children, className, variant = "body-md", as: Tag = "p" }: TextProps) {
+export function Text({
+  children,
+  className,
+  variant = "body-md",
+  as: Tag = "p",
+}: TextProps) {
   const variantClass = variantClassMap[variant];
   return (
     <Tag className={[variantClass, className].filter(Boolean).join(" ")}>
