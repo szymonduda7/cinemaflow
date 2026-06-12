@@ -11,7 +11,7 @@ export function Navbar() {
       alignItems="center"
       className={styles["main"]}
     >
-      <Flex gap={"48px"}>
+      <Flex gap={"48px"} alignItems="center">
         <Text variant="display-lg">CINEMAFLOW</Text>
 
         <Flex gap={"32px"} alignItems="center">
